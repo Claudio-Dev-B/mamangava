@@ -310,3 +310,15 @@ window.addEventListener("resize", queueParallax);
 reducedMotion.addEventListener("change", queueParallax);
 queueParallax();
 
+// Keep the last visible part of a tall section in place as the next one covers it.
+if ("ResizeObserver" in window) {
+  const panels = document.querySelectorAll("#conteudo > section:not(:last-child)");
+  const panelSizes = new ResizeObserver(entries => {
+    for (const { target } of entries) {
+      target.style.setProperty("--panel-height", `${target.offsetHeight}px`);
+      target.dataset.stack = "";
+    }
+  });
+  for (const panel of panels) panelSizes.observe(panel);
+}
+
