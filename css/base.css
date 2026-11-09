@@ -1,0 +1,49 @@
+@font-face {
+  font-family: Gabarito;
+  src: url("../assets/gabarito.woff2") format("woff2");
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lusitana;
+  src: url("../assets/lusitana.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+:root {
+  color-scheme: dark;
+  --carbon: #171518;
+  --paper: #e5dacf;
+  --copper: #cb7c34;
+  --amber: #d88d3d;
+  --earth: #473d35;
+  --aluminum: #c2c5c8;
+  --aluminum-light: #dfe2e3;
+  --gutter: clamp(1rem, 5vw, 6rem);
+  --motion: cubic-bezier(.22,.68,.22,1);
+  --serif: Lusitana, Georgia, serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--paper); background: var(--carbon); font: 400 1rem/1.55 Gabarito, Arial, sans-serif; }
+img { display: block; max-width: 100%; height: auto; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-underline-offset: .2em; }
+h1, h2, h3, p, figure { margin: 0; }
+[hidden] { display: none !important; }
+:focus-visible { outline: .16rem solid currentColor; outline-offset: .3rem; }
+[id] { scroll-margin-top: 1.25rem; }
+.wrap { width: min(100% - var(--gutter) * 2, 100rem); margin-inline: auto; }
+.skip { position: absolute; z-index: 10; inset: .7rem auto auto .7rem; padding: .8rem; transform: translateY(-200%); background: var(--paper); color: var(--carbon); }
+.skip:focus { transform: none; }
+.paper { color-scheme: light; color: var(--carbon); background: var(--paper); }
+.copper { color-scheme: light; color: var(--carbon); background: var(--copper); }
+.eyebrow, .section-index, .hero-index, small { font-size: .77rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+.section-index { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid currentColor; padding-top: .8rem; }
+.display { font-size: clamp(3rem, 9vw, 10rem); font-weight: 800; line-height: .83; letter-spacing: -.07em; }
+.display em { font-family: var(--serif); font-style: normal; font-weight: 700; letter-spacing: -.09em; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
