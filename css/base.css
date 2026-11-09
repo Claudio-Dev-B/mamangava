@@ -39,8 +39,7 @@ h1, h2, h3, p, figure { margin: 0; }
 .skip:focus { transform: none; }
 .paper { color-scheme: light; color: var(--carbon); background: var(--paper); }
 .copper { color-scheme: light; color: var(--carbon); background: var(--copper); }
-.eyebrow, .section-index, .hero-index, small { font-size: .77rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
-.section-index { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid currentColor; padding-top: .8rem; }
+.eyebrow, .hero-index, small { font-size: .77rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
 .display { font-size: clamp(3rem, 9vw, 10rem); font-weight: 800; line-height: .83; letter-spacing: -.07em; }
 .display em { font-family: var(--serif); font-style: normal; font-weight: 700; letter-spacing: -.09em; }
 @media (prefers-reduced-motion: reduce) {

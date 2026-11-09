@@ -72,7 +72,7 @@ function element(tag, value, className) {
 
 function render(focus = false) {
   content.replaceChildren();
-  status.textContent = step === "result" ? "Resumo do projeto" : `${String(history.length + 1).padStart(2, "0")} / Projeto`;
+  status.textContent = step === "result" ? "Resumo do projeto" : "Sobre o projeto";
   back.hidden = history.length === 0;
   next.hidden = step === "result";
   next.firstChild.textContent = getNext(step) === "result" ? "Ver resumo " : "Continuar ";
@@ -222,17 +222,63 @@ back.addEventListener("click", () => {
 actions.hidden = false;
 render();
 
-if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const observer = new IntersectionObserver(entries => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove("pending");
-        observer.unobserve(entry.target);
-      }
-    }
-  }, { threshold: .15 });
-  for (const project of document.querySelectorAll("[data-reveal]")) {
-    project.classList.add("pending");
-    observer.observe(project);
+const album = document.querySelector(".album");
+const projects = [...album.querySelectorAll(".project")];
+const controls = album.querySelector(".album-controls");
+const rotation = album.querySelector("[data-rotation]");
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+let activeProject = 0;
+let rotationEnabled = !reducedMotion.matches;
+let albumVisible = !("IntersectionObserver" in window);
+let rotationTimer;
+
+function showProject(index) {
+  activeProject = (index + projects.length) % projects.length;
+  const behind = (activeProject + 1) % projects.length;
+  for (const [position, project] of projects.entries()) {
+    const current = position === activeProject;
+    project.dataset.position = current ? "current" : position === behind ? "behind" : "hidden";
+    project.inert = !current;
   }
 }
+
+function updateRotation() {
+  clearInterval(rotationTimer);
+  rotation.textContent = rotationEnabled ? "Pausar rotação" : "Girar álbum";
+  if (rotationEnabled && albumVisible && !document.hidden && !album.matches(":hover, :focus-within")) {
+    rotationTimer = setInterval(() => showProject(activeProject + 1), 6500);
+  }
+}
+
+function browseProject(direction) {
+  rotationEnabled = false;
+  showProject(activeProject + direction);
+  updateRotation();
+}
+
+album.querySelector("[data-previous]").addEventListener("click", () => browseProject(-1));
+album.querySelector("[data-next]").addEventListener("click", () => browseProject(1));
+rotation.addEventListener("click", () => {
+  rotationEnabled = !rotationEnabled;
+  updateRotation();
+});
+for (const event of ["pointerenter", "pointerleave", "focusin", "focusout"]) {
+  album.addEventListener(event, () => requestAnimationFrame(updateRotation));
+}
+document.addEventListener("visibilitychange", updateRotation);
+reducedMotion.addEventListener("change", event => {
+  if (event.matches) rotationEnabled = false;
+  updateRotation();
+});
+if ("IntersectionObserver" in window) {
+  const visibility = new IntersectionObserver(([entry]) => {
+    albumVisible = entry.isIntersecting;
+    updateRotation();
+  }, { threshold: .2 });
+  visibility.observe(album);
+}
+album.dataset.ready = "";
+controls.hidden = false;
+showProject(0);
+updateRotation();
+
