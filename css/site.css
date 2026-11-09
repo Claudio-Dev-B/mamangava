@@ -61,11 +61,28 @@
 .reading-list h3 a { text-decoration: none; }
 .reading-list h3 a:hover, .read-article { text-decoration: underline; }
 .read-article { width: fit-content; display: inline-flex; align-items: center; min-height: 2.75rem; }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    [data-parallax] { animation: section-drift 1s var(--motion) both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
-    @keyframes section-drift { from { translate: 0 1.1rem; } to { translate: 0 -1.1rem; } }
-  }
+.scene { position: relative; isolation: isolate; overflow: clip; }
+.scene-art {
+  position: absolute;
+  z-index: -1;
+  width: clamp(16rem, 43vw, 46rem);
+  aspect-ratio: 1;
+  top: 50%;
+  right: -6%;
+  background: url("../assets/simbolo-cobre.svg") center / contain no-repeat;
+  opacity: .16;
+  pointer-events: none;
+  transform: translateY(calc(-50% + var(--scene-offset, 0px))) rotate(-22deg);
+}
+.projects .scene-art, .plan .scene-art { opacity: .16; }
+.services .scene-art, .plan .scene-art { left: -6%; right: auto; }
+.quote .scene-art { filter: brightness(0); opacity: .11; }
+.blog-entry .wrap { display: grid; gap: .9rem; }
+.blog-entry .display, .blog-archive .display { margin-block: 0 1rem; }
+.blog-intro { margin-block-end: clamp(2rem, 6vw, 5rem); max-width: 49ch; }
+.blog-link { width: fit-content; color: var(--amber); font-weight: 700; min-height: 2.75rem; display: inline-flex; align-items: center; }
+@media (prefers-reduced-motion: reduce) {
+  .scene-art { transform: translateY(-50%) rotate(-22deg); }
 }
 @media (max-width: 740px) {
   .projects > .wrap, .reading-list { grid-template-columns: 1fr; }

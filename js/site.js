@@ -150,8 +150,9 @@ function renderResult() {
         lines.append(row);
       }
       content.append(lines, element("p", money.format(subtotal), "result-price"));
-      content.append(element("p", "Desenvolvimento em 2x de R$ 900. A forma de pagamento dos adicionais é definida na proposta.", "result-note"));
-      messages.push(`Investimento inicial estimado: ${money.format(subtotal)}`);
+      const installments = `2x de ${money.format(subtotal / 2)}`;
+      content.append(element("p", installments, "result-note"));
+      messages.push(`Investimento inicial estimado: ${money.format(subtotal)} (${installments})`);
     }
     if (hasPlan) {
       const planText = isStore ? "Hospedagem a definir no escopo da loja." : "Hospedagem e manutenção: R$ 89,90 por mês.";
@@ -281,4 +282,31 @@ album.dataset.ready = "";
 controls.hidden = false;
 showProject(0);
 updateRotation();
+
+const scenes = [...document.querySelectorAll(".scene")].map(section => ({
+  section,
+  artwork: section.querySelector(".scene-art")
+}));
+let scrollFrame = 0;
+
+function paintParallax() {
+  scrollFrame = 0;
+  if (reducedMotion.matches) return;
+  for (const { section, artwork } of scenes) {
+    const bounds = section.getBoundingClientRect();
+    if (bounds.bottom < 0 || bounds.top > innerHeight) continue;
+    const progress = (innerHeight - bounds.top) / (innerHeight + bounds.height);
+    const travel = Math.min(innerHeight * .21, 180);
+    artwork.style.setProperty("--scene-offset", `${(progress - .5) * travel}px`);
+  }
+}
+
+function queueParallax() {
+  if (!reducedMotion.matches && !scrollFrame) scrollFrame = requestAnimationFrame(paintParallax);
+}
+
+window.addEventListener("scroll", queueParallax, { passive: true });
+window.addEventListener("resize", queueParallax);
+reducedMotion.addEventListener("change", queueParallax);
+queueParallax();
 
