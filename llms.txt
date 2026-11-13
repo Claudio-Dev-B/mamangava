@@ -1,0 +1,32 @@
+# Mamangava
+
+> A Mamangava desenvolve sites para empresas no Brasil. O site está em português do Brasil e reúne serviços, projetos publicados, simulador de orçamento e artigos para quem vai contratar, publicar ou reformular um site.
+
+Um site novo sem loja virtual parte de R$ 1.800, em duas parcelas de R$ 900. O preço considera os materiais disponíveis e depende da confirmação do escopo, das páginas e das funcionalidades. Reformulação e loja virtual passam por análise. O plano opcional de hospedagem e manutenção custa R$ 89,90 por mês. Consulte as páginas de serviço e orçamento para ver as condições.
+
+## Serviços e orçamento
+
+- [Mamangava](https://mamangava.com.br/): apresentação do estúdio, serviços e portfólio.
+- [Criação de sites institucionais](https://mamangava.com.br/criacao-de-sites-institucionais/): entregas, preço inicial e custos recorrentes.
+- [Reformulação de sites](https://mamangava.com.br/reformulacao-de-sites/): avaliação de páginas, domínio, e-mail e integrações existentes.
+- [Simulador de orçamento](https://mamangava.com.br/#orcamento): estimativa para site novo e encaminhamento de outros projetos para análise.
+
+## Projetos
+
+- [Sevá Camburi](https://mamangava.com.br/projeto-seva-camburi/): site de restaurante e cervejaria com cardápio, horários e rota.
+- [ChefData](https://mamangava.com.br/projeto-chefdata/): site que apresenta consultoria, software e conteúdo de gestão para restaurantes.
+
+## Caderno
+
+- [Índice de matérias](https://mamangava.com.br/caderno/): guias sobre contratação, operação e setores.
+- [Quanto custa criar um site](https://mamangava.com.br/caderno/custo-de-um-site.html): exemplos de estimativas, adicionais e parcelamento.
+- [Como pedir orçamento de site](https://mamangava.com.br/caderno/orcamento-criacao-de-site.html): informações para a primeira conversa e mensagem de exemplo.
+- [Como comparar propostas](https://mamangava.com.br/caderno/comparar-propostas-criacao-site.html): escopo, acessos, medição e custos após a entrega.
+- [Domínio e hospedagem](https://mamangava.com.br/caderno/dominio-e-hospedagem-de-site.html): registro, DNS e e-mail da empresa.
+- [Troca de site e URLs no Google](https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html): mapeamento de páginas e acompanhamento da migração.
+- [Landing page para Google Ads](https://mamangava.com.br/caderno/landing-page-para-google-ads.html): testes de oferta, formulário, WhatsApp e conversão.
+- [Escopo de loja virtual](https://mamangava.com.br/caderno/criacao-de-loja-virtual-escopo.html): catálogo, estoque, pagamento, frete e pós-venda.
+
+## Contato
+
+- [WhatsApp da Mamangava](https://wa.me/5511965970387): atendimento e orçamento.
