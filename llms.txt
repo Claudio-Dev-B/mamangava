@@ -1,8 +1,8 @@
 # Mamangava
 
-> A Mamangava desenvolve sites para empresas no Brasil. O site está em português do Brasil e reúne serviços, projetos publicados, simulador de orçamento e artigos para quem vai contratar, publicar ou reformular um site.
+> A Mamangava desenvolve sites institucionais, catálogos e páginas de apresentação para comércios locais, marcas, profissionais liberais e empresas de diferentes portes no Brasil. O site está em português do Brasil e reúne serviços, projetos publicados, simulador de orçamento e artigos para quem vai contratar, publicar ou reformular um site.
 
-Um site novo sem loja virtual parte de R$ 1.800, em duas parcelas de R$ 900. O preço considera os materiais disponíveis e depende da confirmação do escopo, das páginas e das funcionalidades. Reformulação e loja virtual passam por análise. O plano opcional de hospedagem e manutenção custa R$ 89,90 por mês. Consulte as páginas de serviço e orçamento para ver as condições.
+Um site institucional novo parte de R$ 1.800, em duas parcelas de R$ 900. O preço considera os materiais disponíveis e depende da confirmação do escopo, das páginas e das funcionalidades. Reformulações passam por análise do endereço e do escopo atual. O plano opcional de hospedagem e manutenção custa R$ 89,90 por mês. Consulte as páginas de serviço e orçamento para ver as condições.
 
 ## Serviços e orçamento
 
@@ -25,7 +25,8 @@ Um site novo sem loja virtual parte de R$ 1.800, em duas parcelas de R$ 900. O p
 - [Domínio e hospedagem](https://mamangava.com.br/caderno/dominio-e-hospedagem-de-site.html): registro, DNS e e-mail da empresa.
 - [Troca de site e URLs no Google](https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html): mapeamento de páginas e acompanhamento da migração.
 - [Landing page para Google Ads](https://mamangava.com.br/caderno/landing-page-para-google-ads.html): testes de oferta, formulário, WhatsApp e conversão.
-- [Escopo de loja virtual](https://mamangava.com.br/caderno/criacao-de-loja-virtual-escopo.html): catálogo, estoque, pagamento, frete e pós-venda.
+- [Site para comércio local](https://mamangava.com.br/caderno/site-para-comercio-local.html): unidades, horários, rota e contato.
+- [Site para marcas e produtos](https://mamangava.com.br/caderno/site-para-marca-e-produtos.html): linhas, fichas técnicas, pontos de venda e cotação.
 
 ## Contato
 
