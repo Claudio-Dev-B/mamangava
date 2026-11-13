@@ -141,6 +141,7 @@
 .project-process { margin: clamp(2.5rem, 6vw, 6rem) 0 0 auto; max-width: 44rem; padding: clamp(1.1rem, 3vw, 2rem); background: var(--earth); border-radius: .45rem; }
 .project-process h3 { font: 700 clamp(1.65rem, 3vw, 2.7rem)/1.05 var(--serif); margin-bottom: .65rem; }
 .project-process p { max-width: 60ch; }
+.project-process p + p { margin-top: .8rem; }
 .calculator { background: var(--paper); padding: clamp(1rem, 3vw, 2.5rem); border: 1px solid var(--carbon); min-height: 19rem; box-shadow: .5rem .5rem 0 var(--carbon); }
 .calculator .eyebrow { color: var(--earth); margin-bottom: 1.25rem; }
 fieldset { padding: 0; margin: 0; border: 0; min-inline-size: 0; }

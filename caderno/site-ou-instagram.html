@@ -15,6 +15,7 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/editorial.css">
   <!-- SEO de produção -->
   <link rel="canonical" href="https://mamangava.com.br/caderno/site-ou-instagram.html">
   <meta property="og:title" content="Minha empresa já usa Instagram. Preciso de um site? | Mamangava">
@@ -51,6 +52,29 @@
       "publisher": {
         "@id": "https://mamangava.com.br/#organizacao"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://mamangava.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Caderno",
+          "item": "https://mamangava.com.br/caderno/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Minha empresa já usa Instagram. Preciso de um site?",
+          "item": "https://mamangava.com.br/caderno/site-ou-instagram.html"
+        }
+      ]
     }
   ]
 }
@@ -59,8 +83,9 @@
 </head>
 <body class="paper">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-  <header class="top wrap"><a class="brand" href="../index.html">mamangava<span>.</span></a><a href="index.html">Voltar ao blog</a></header>
+  <header class="top wrap"><a class="brand" href="../">mamangava<span>.</span></a><a href="./">Voltar ao blog</a></header>
   <main id="conteudo" class="article">
+    <nav class="breadcrumbs" aria-label="Localização nesta página"><ol><li><a href="../">Início</a></li><li><a href="./">Caderno</a></li><li aria-current="page">Minha empresa já usa Instagram. Preciso de um site?</li></ol></nav>
     <article>
       <div class="eyebrow">Blog · Presença digital</div>
       <h1>Minha empresa já usa Instagram. Preciso de um site?</h1>
@@ -70,8 +95,15 @@
       <p>Escolha uma conversa de atendimento que avance bem. O que a pessoa pergunta antes de comprar ou pedir orçamento? Se ela precisa entender medidas, acabamentos e instalação, faz sentido organizar essas informações em um catálogo. Se o serviço é mais simples, uma página com a oferta, a região atendida e o caminho para falar com a empresa pode resolver a primeira etapa.</p>
       <p>O ganho de organizar esse conteúdo aparece também na hora de anunciar. Você consegue levar a pessoa à página que explica a oferta do anúncio. A mesma página pode encaminhar a conversa para o WhatsApp quando o visitante estiver pronto.</p>
       <p>Tem dúvida sobre o tamanho do projeto? Compare <a href="prazo-e-formatos.html">os formatos de site</a> antes de decidir quantas páginas precisa.</p>
-      <a class="button" href="../index.html#orcamento">Simular meu primeiro site ↗</a>
+      <a class="button" href="../#orcamento">Simular meu primeiro site ↗</a>
     </article>
+    <aside class="article-related" aria-labelledby="related-title">
+      <h2 id="related-title">Continue a leitura</h2>
+      <ul>
+        <li><a href="prazo-e-formatos.html">Qual formato de site faz sentido</a></li>
+        <li><a href="comparar-propostas-criacao-site.html">Como comparar propostas</a></li>
+      </ul>
+    </aside>
   </main>
 </body>
 </html>

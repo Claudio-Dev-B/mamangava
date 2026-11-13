@@ -15,6 +15,7 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/editorial.css">
   <!-- SEO de produção -->
   <link rel="canonical" href="https://mamangava.com.br/caderno/manutencao-de-site.html">
   <meta property="og:title" content="O que você paga depois que o site entra no ar? | Mamangava">
@@ -51,6 +52,29 @@
       "publisher": {
         "@id": "https://mamangava.com.br/#organizacao"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://mamangava.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Caderno",
+          "item": "https://mamangava.com.br/caderno/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "O que você paga depois que o site entra no ar?",
+          "item": "https://mamangava.com.br/caderno/manutencao-de-site.html"
+        }
+      ]
     }
   ]
 }
@@ -59,8 +83,9 @@
 </head>
 <body class="paper">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-  <header class="top wrap"><a class="brand" href="../index.html">mamangava<span>.</span></a><a href="index.html">Voltar ao blog</a></header>
+  <header class="top wrap"><a class="brand" href="../">mamangava<span>.</span></a><a href="./">Voltar ao blog</a></header>
   <main id="conteudo" class="article">
+    <nav class="breadcrumbs" aria-label="Localização nesta página"><ol><li><a href="../">Início</a></li><li><a href="./">Caderno</a></li><li aria-current="page">O que você paga depois que o site entra no ar?</li></ol></nav>
     <article>
       <div class="eyebrow">Blog</div>
       <h1>O que você paga depois que o site entra no ar?</h1>
@@ -72,8 +97,15 @@
       <h2>Onde ficam o domínio e os acessos?</h2>
       <p>Guarde o nome do serviço onde o domínio está registrado, a data de renovação e o contato de quem administra a conta. Se o e-mail da empresa usa o mesmo domínio, avise antes de uma troca de hospedagem. É possível mudar o destino do site e manter os registros que fazem o e-mail funcionar, desde que esses registros sejam identificados antes da alteração.</p>
       <p>Se a sua dúvida ainda é o custo de colocar o site no ar, veja <a href="custo-de-um-site.html">como calculamos o orçamento de desenvolvimento</a>. No simulador, você informa se já tem hospedagem e recebe a estimativa com a mensalidade separada.</p>
-      <a class="button" href="../index.html#orcamento">Simular com ou sem hospedagem ↗</a>
+      <a class="button" href="../#orcamento">Simular com ou sem hospedagem ↗</a>
     </article>
+    <aside class="article-related" aria-labelledby="related-title">
+      <h2 id="related-title">Continue a leitura</h2>
+      <ul>
+        <li><a href="comparar-propostas-criacao-site.html">O que conferir antes de contratar</a></li>
+        <li><a href="../criacao-de-sites-institucionais/">Desenvolvimento e plano de manutenção da Mamangava</a></li>
+      </ul>
+    </aside>
   </main>
 </body>
 </html>

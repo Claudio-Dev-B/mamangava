@@ -47,6 +47,19 @@ const fields = {
 const answers = new Map();
 const history = [];
 let step = "existing";
+let quoteStarted = false;
+
+function trackQuote(event, projectType) {
+  window.dataLayer = window.dataLayer || [];
+  const measurement = { event };
+  if (projectType) measurement.project_type = projectType;
+  window.dataLayer.push(measurement);
+}
+
+function quoteProjectType() {
+  if (answers.get("existing") === "sim") return "redesign";
+  return answers.get("store") === "sim" ? "store" : "new_site";
+}
 
 function getNext(key) {
   switch (key) {
@@ -123,6 +136,7 @@ function render(focus = false) {
 function renderResult() {
   const isExisting = answers.get("existing") === "sim";
   const isStore = answers.get("store") === "sim";
+  const projectType = quoteProjectType();
   const items = [["Desenvolvimento", 1800]];
   if (answers.get("domain") === "nao") items.push(["Registro de domínio", 45]);
   if (answers.get("design") === "sim") items.push(["Identidade visual", 750]);
@@ -184,6 +198,7 @@ function renderResult() {
   }
   const link = element("a", isExisting || isStore ? "Falar com o analista ↗" : "Enviar meu projeto pelo WhatsApp ↗", "button");
   link.href = `https://wa.me/${phone}?text=${encodeURIComponent(messages.join("\n"))}`;
+  link.addEventListener("click", () => trackQuote("whatsapp_click", projectType));
   content.append(link);
 }
 
@@ -207,9 +222,16 @@ form.addEventListener("submit", event => {
   } else {
     answers.set(step, value);
   }
+  if (!quoteStarted) {
+    trackQuote("quote_start");
+    quoteStarted = true;
+  }
   history.push(step);
   step = getNext(step);
   render(true);
+  if (step === "result") {
+    trackQuote("quote_complete", quoteProjectType());
+  }
 });
 
 back.addEventListener("click", () => {
@@ -283,7 +305,7 @@ controls.hidden = false;
 showProject(0);
 updateRotation();
 
-const scenes = [...document.querySelectorAll(".scene")].map(section => ({
+const scenes = [...document.querySelectorAll(".scene:has(.scene-art)")].map(section => ({
   section,
   artwork: section.querySelector(".scene-art")
 }));
@@ -292,12 +314,17 @@ let scrollFrame = 0;
 function paintParallax() {
   scrollFrame = 0;
   if (reducedMotion.matches) return;
+  const viewportHeight = innerHeight;
+  const travel = Math.min(viewportHeight * .21, 180);
+  const offsets = [];
   for (const { section, artwork } of scenes) {
     const bounds = section.getBoundingClientRect();
-    if (bounds.bottom < 0 || bounds.top > innerHeight) continue;
-    const progress = (innerHeight - bounds.top) / (innerHeight + bounds.height);
-    const travel = Math.min(innerHeight * .21, 180);
-    artwork.style.setProperty("--scene-offset", `${(progress - .5) * travel}px`);
+    if (bounds.bottom < 0 || bounds.top > viewportHeight) continue;
+    const progress = (viewportHeight - bounds.top) / (viewportHeight + bounds.height);
+    offsets.push([artwork, (progress - .5) * travel]);
+  }
+  for (const [artwork, offset] of offsets) {
+    artwork.style.setProperty("--scene-offset", `${offset}px`);
   }
 }
 

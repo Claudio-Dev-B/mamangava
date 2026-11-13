@@ -1,6 +1,6 @@
 # Mamangava
 
-Primeira versão para revisão. Abra index.html para navegar. O site usa HTML, CSS e JavaScript nativos. As fontes, os ícones, o símbolo e as capturas são servidos localmente.
+O site usa HTML, CSS e JavaScript nativos. Sirva a pasta com um servidor estático para navegar pelas URLs com barra final. As fontes, os ícones, o símbolo e as capturas são servidos localmente.
 
 ## Referências visuais
 
@@ -27,6 +27,12 @@ As capturas de ChefData, Sevá Camburi, Bússola.farm, Atiye Persianas e Vitrine
 
 Os textos de Saiba mais estão disponíveis no simulador para validação. Confirmar o escopo coberto pelo preço-base e pela redação, a vigência do registro de domínio, o parcelamento dos adicionais e a periodicidade das quatro alterações ou publicações. O site exibe as quatro inclusões sem atribuir uma periodicidade.
 
-Definir domínio, infraestrutura e acessos de medição. Os identificadores de tags, verificações de propriedade e integrações de produção dependem das contas do cliente. Os textos sobre a oferta descrevem entregas da Mamangava aos clientes.
+## Busca e medição em produção
+
+- Confirmar a resposta HTTPS do domínio principal e o redirecionamento de `www`. Enviar `https://mamangava.com.br/sitemap.xml` ao Google Search Console e ao Bing Webmaster Tools. Inspecionar a home, o Caderno, a página de serviço, os estudos de caso e o artigo de preço.
+- No contêiner `GTM-MXQGZHDH`, associar os eventos personalizados `quote_start`, `quote_complete` e `whatsapp_click` a tags de evento GA4. Nos dois últimos, usar a variável da camada de dados `project_type`, com valores `new_site`, `redesign` e `store`.
+- Validar os três fluxos no Tag Assistant e no DebugView. A camada de dados recebe apenas o nome do evento e, quando aplicável, o tipo do projeto. Revisar as tags automáticas de clique para que o texto pré-preenchido do WhatsApp e o endereço do cliente não sejam coletados. Contabilizar contatos recebidos separadamente dos cliques.
+- Registrar a linha de base por consulta e página no Search Console. Acompanhar sessões e eventos do simulador no GA4 e citações por URL no relatório de IA do Bing.
+- Medir LCP, INP e CLS da home e das páginas novas em produção. Usar dados de campo quando disponíveis e o Lighthouse para diagnóstico.
 
 O símbolo da mamangava é o desenho aprovado anteriormente. Os ícones de estrutura, busca e medição foram desenhados para este projeto. Lusitana e Gabarito têm os arquivos de licença incluídos em assets.

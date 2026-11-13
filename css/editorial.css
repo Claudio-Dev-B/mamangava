@@ -1,0 +1,77 @@
+.breadcrumbs { font-size: .92rem; }
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.breadcrumbs li + li::before { content: "›"; margin-inline-end: .65rem; }
+.article > .breadcrumbs { margin-block-end: 2.2rem; }
+.article-related {
+  margin-block-start: 3rem;
+  padding: clamp(1.1rem, 4vw, 2rem);
+  background: var(--aluminum-light);
+}
+.article-related h2 { margin-block-start: 0; }
+.article-related ul { padding-inline-start: 1.25rem; margin-block-end: 0; }
+.article-related li + li { margin-block-start: .55rem; }
+.proposal-checklist { padding: 0; list-style: none; }
+.proposal-checklist label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: .6rem;
+  padding-block: .4rem;
+  cursor: pointer;
+}
+.proposal-checklist input { accent-color: var(--earth); }
+.editorial-hero { padding-block: 1rem clamp(2.8rem, 7vw, 6rem); }
+.editorial-label { margin-block-start: clamp(2.5rem, 7vw, 6rem); color: var(--amber); }
+.editorial-hero h1 {
+  max-width: 13ch;
+  margin-block: .35em;
+  font: 700 clamp(2.55rem, 8.5vw, 9rem)/.95 var(--serif);
+  letter-spacing: -.065em;
+}
+.editorial-lead {
+  max-width: 44ch;
+  margin-inline-start: clamp(0rem, 8vw, 9rem);
+  font-size: clamp(1.13rem, 2.2vw, 1.65rem);
+}
+.editorial-band, .editorial-close { padding-block: clamp(2.8rem, 7vw, 7rem); }
+.editorial-band + .editorial-band { background: var(--aluminum-light); }
+.editorial-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(1.25rem, 5vw, 6rem);
+}
+.editorial-grid h2 {
+  max-width: 16ch;
+  font: 700 clamp(2rem, 4.8vw, 5rem)/1 var(--serif);
+  letter-spacing: -.045em;
+}
+.editorial-copy { display: grid; justify-items: start; gap: 1rem; font-size: 1.12rem; }
+.editorial-copy p { max-width: 58ch; }
+.case-screens {
+  position: relative;
+  display: grid;
+  align-items: end;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 22%);
+  padding-block-end: clamp(2.8rem, 8vw, 8rem);
+}
+.case-screens img { width: 100%; border-radius: .45rem; }
+.case-screens .case-mobile {
+  position: relative;
+  left: -15%;
+  bottom: -5%;
+  border: clamp(.16rem, .5vw, .45rem) solid var(--carbon);
+  box-shadow: 0 .6rem 2rem #17151880;
+}
+@media (max-width: 42rem) {
+  .editorial-grid { grid-template-columns: 1fr; }
+  .editorial-lead { margin-inline-start: 0; }
+  .case-screens { grid-template-columns: minmax(0, 1fr) minmax(0, 27%); }
+}
