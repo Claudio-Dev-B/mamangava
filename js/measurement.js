@@ -1,6 +1,8 @@
 window.mamangavaTrack = function (event, parameters = {}) {
+  if (!window.mamangavaConsent?.allowsAnalytics()) return false;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event, ...parameters });
+  return true;
 };
 
 document.addEventListener("click", event => {

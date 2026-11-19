@@ -1,0 +1,95 @@
+.cookie-banner, .cookie-dialog {
+  color-scheme: light;
+  color: var(--carbon);
+  background: var(--paper);
+  box-shadow: 0 .7rem 3rem #17151838;
+  font: 400 1rem/1.5 Gabarito, Arial, sans-serif;
+}
+.cookie-banner {
+  position: fixed;
+  z-index: 100;
+  inset: auto auto max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  width: min(38rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+  border-radius: .35rem 1.5rem .35rem .35rem;
+}
+.cookie-heading { display: flex; align-items: center; gap: .8rem; margin-bottom: .7rem; }
+.cookie-heading img { flex-shrink: 0; }
+.cookie-heading h2, .cookie-dialog h2 {
+  font: 700 clamp(1.65rem, 3vw, 2.25rem)/1.08 var(--serif);
+  letter-spacing: -.045em;
+}
+.cookie-banner p, .cookie-dialog > p { max-width: 56ch; }
+.cookie-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.2rem; }
+.cookie-actions button {
+  flex: 1;
+  min-height: 2.85rem;
+  min-width: min(10rem, 100%);
+  padding: .7rem .85rem;
+  border: 1px solid var(--earth);
+  border-radius: .15rem;
+  color: var(--carbon);
+  background: transparent;
+  font-weight: 600;
+  transition: background .2s var(--motion), transform .2s var(--motion);
+}
+.cookie-actions button:is(:hover, :focus-visible) { background: var(--aluminum-light); }
+.cookie-actions button:is([data-cookie-accept], [data-cookie-save]) { background: var(--copper); }
+.cookie-actions button:is([data-cookie-accept], [data-cookie-save]):hover { background: var(--amber); }
+.cookie-links { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; margin-top: .6rem; font-size: .9rem; }
+.cookie-links button, .cookie-preferences {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.cookie-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.cookie-dialog {
+  width: min(37rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: clamp(1.2rem, 4vw, 2rem);
+  border: 0;
+  border-radius: .35rem 1.5rem .35rem .35rem;
+  overflow-y: auto;
+}
+.cookie-dialog::backdrop { background: #171518b3; backdrop-filter: blur(4px); }
+.cookie-dialog-heading { display: flex; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: .9rem; }
+.cookie-close { flex-shrink: 0; margin: -.45rem -.6rem 0 0; width: 2.75rem; height: 2.75rem; border: 0; color: var(--earth); background: transparent; font-size: 1.7rem; line-height: 1; }
+.cookie-category { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.15rem; }
+.cookie-category h3, .cookie-category strong { display: block; margin: 0 0 .3rem; font-size: 1rem; font-weight: 700; }
+.cookie-category p, .cookie-category-description { display: block; color: var(--earth); font-size: .94rem; }
+.cookie-category:first-of-type { margin-top: .6rem; }
+.cookie-required { flex-shrink: 0; font-size: .75rem; font-weight: 600; }
+.cookie-option { cursor: pointer; }
+.cookie-option input { flex-shrink: 0; width: 1.45rem; height: 1.45rem; margin: .6rem; accent-color: var(--earth); cursor: pointer; }
+.cookie-policy { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: .92rem; }
+.cookie-banner :focus-visible, .cookie-dialog :focus-visible { outline-color: var(--carbon); }
+.cookie-notice {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+.cookie-footer { display: flex; flex-basis: 100%; flex-wrap: wrap; align-items: center; gap: .3rem 1.2rem; padding-block: .75rem 1.25rem; font-size: .9rem; }
+body:has(.cookie-dialog[open]) { overflow: hidden; }
+@media (max-width: 365px) {
+  .cookie-banner { padding: 1rem; }
+  .cookie-actions button { min-width: 0; font-size: .88rem; }
+  .cookie-category { gap: .6rem; }
+  .cookie-required { max-width: 5ch; line-height: 1.2; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cookie-banner, .cookie-dialog[open] { animation: cookie-arrive .3s var(--motion) both; }
+  @keyframes cookie-arrive { from { opacity: 0; transform: translateY(.6rem); } to { opacity: 1; transform: translateY(0); } }
+}

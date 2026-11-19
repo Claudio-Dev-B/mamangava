@@ -52,7 +52,7 @@ let quoteStarted = false;
 function trackQuote(event, projectType) {
   const measurement = {};
   if (projectType) measurement.project_type = projectType;
-  window.mamangavaTrack(event, measurement);
+  return window.mamangavaTrack(event, measurement);
 }
 
 function quoteProjectType() {
@@ -223,8 +223,7 @@ form.addEventListener("submit", event => {
     answers.set(step, value);
   }
   if (!quoteStarted) {
-    trackQuote("quote_start");
-    quoteStarted = true;
+    quoteStarted = trackQuote("quote_start");
   }
   window.mamangavaTrack("quote_step_complete", { quote_step: step });
   history.push(step);
@@ -246,14 +245,29 @@ back.addEventListener("click", () => {
 actions.hidden = false;
 render();
 
+let quoteViewed = false;
+let quoteVisibility;
+
+function recordQuoteView() {
+  if (quoteViewed || !window.mamangavaConsent?.allowsAnalytics()) return;
+  const bounds = form.getBoundingClientRect();
+  if (bounds.bottom <= 0 || bounds.top >= innerHeight) return;
+  quoteViewed = window.mamangavaTrack("quote_view");
+  quoteVisibility?.disconnect();
+}
+
 if ("IntersectionObserver" in window) {
-  const quoteVisibility = new IntersectionObserver(entries => {
-    if (!entries.some(entry => entry.isIntersecting)) return;
-    window.mamangavaTrack("quote_view");
-    quoteVisibility.disconnect();
+  quoteVisibility = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) recordQuoteView();
   }, { threshold: .15 });
   quoteVisibility.observe(form);
 }
+
+window.addEventListener("mamangava:consent", event => {
+  if (!event.detail.analytics) return;
+  recordQuoteView();
+  if (step !== "result") window.mamangavaTrack("quote_step_view", { quote_step: step });
+});
 
 const album = document.querySelector(".album");
 const projects = [...album.querySelectorAll(".project")];
