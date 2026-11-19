@@ -13,10 +13,12 @@
   <title>Site para médico: o que o paciente precisa encontrar? | Mamangava</title>
   <meta name="description" content="Organize especialidades, locais de atendimento e agendamento em um site médico. Veja quais decisões mudam o escopo do projeto.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <script src="../js/measurement.js" defer></script>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/site.css">
   <link rel="stylesheet" href="../css/editorial.css">
   <!-- SEO de produção -->
+  <link rel="describedby" href="https://mamangava.com.br/llms.txt" type="text/plain">
   <link rel="canonical" href="https://mamangava.com.br/caderno/site-para-medico.html">
   <meta property="og:title" content="Site para médico: o que o paciente precisa encontrar? | Mamangava">
   <meta property="og:description" content="Organize especialidades, locais de atendimento e agendamento em um site médico. Veja quais decisões mudam o escopo do projeto.">
@@ -38,19 +40,57 @@
       "name": "Mamangava",
       "url": "https://mamangava.com.br/",
       "logo": "https://mamangava.com.br/assets/logo-mamangava.png",
-      "telephone": "+5511965970387"
+      "telephone": "+5511965970387",
+      "description": "Desenvolvimento de sites institucionais, catálogos e páginas de apresentação para comércios locais, marcas, empresas e profissionais liberais no Brasil."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mamangava.com.br/#site",
+      "name": "Mamangava",
+      "url": "https://mamangava.com.br/",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://mamangava.com.br/#organizacao"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mamangava.com.br/caderno/site-para-medico.html#pagina",
+      "url": "https://mamangava.com.br/caderno/site-para-medico.html",
+      "name": "Site para médico: o que o paciente precisa encontrar?",
+      "description": "Organize especialidades, locais de atendimento e agendamento em um site médico. Veja quais decisões mudam o escopo do projeto.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://mamangava.com.br/#site"
+      },
+      "publisher": {
+        "@id": "https://mamangava.com.br/#organizacao"
+      },
+      "mainEntity": {
+        "@id": "https://mamangava.com.br/caderno/site-para-medico.html#artigo"
+      },
+      "breadcrumb": {
+        "@id": "https://mamangava.com.br/caderno/site-para-medico.html#navegacao"
+      }
     },
     {
       "@type": "Article",
       "headline": "Site para médico: o que o paciente precisa encontrar?",
       "description": "Organize especialidades, locais de atendimento e agendamento em um site médico. Veja quais decisões mudam o escopo do projeto.",
       "inLanguage": "pt-BR",
-      "mainEntityOfPage": "https://mamangava.com.br/caderno/site-para-medico.html",
+      "mainEntityOfPage": {
+        "@id": "https://mamangava.com.br/caderno/site-para-medico.html#pagina"
+      },
       "author": {
         "@id": "https://mamangava.com.br/#organizacao"
       },
       "publisher": {
         "@id": "https://mamangava.com.br/#organizacao"
+      },
+      "@id": "https://mamangava.com.br/caderno/site-para-medico.html#artigo",
+      "image": "https://mamangava.com.br/assets/compartilhamento.jpg",
+      "isPartOf": {
+        "@id": "https://mamangava.com.br/caderno/#pagina"
       }
     },
     {
@@ -74,7 +114,8 @@
           "name": "Site para médico: o que o paciente precisa encontrar?",
           "item": "https://mamangava.com.br/caderno/site-para-medico.html"
         }
-      ]
+      ],
+      "@id": "https://mamangava.com.br/caderno/site-para-medico.html#navegacao"
     }
   ]
 }
@@ -89,6 +130,7 @@
     <article>
       <div class="eyebrow">Blog · Medicina</div>
       <h1>Site para médico: o que o paciente precisa encontrar?</h1>
+      <p class="article-byline">Por <a rel="author" href="../">Mamangava</a></p>
       <p>Um paciente que chega pelo celular pode estar tentando confirmar o endereço de uma consulta ou descobrir onde agendar. Planeje o site para que ele encontre o profissional, o local e o canal de atendimento sem precisar abrir várias páginas.</p>
       <p>Se o mesmo médico atende em dois endereços, deixe explícito qual número ou link corresponde a cada local. Para uma clínica com vários profissionais, vale organizar as páginas de modo que a pessoa consiga identificar a especialidade e chegar ao agendamento adequado. Essas decisões mudam o escopo bem mais do que a escolha de uma foto de abertura.</p>
       <h2>O agendamento já existe em outra ferramenta?</h2>

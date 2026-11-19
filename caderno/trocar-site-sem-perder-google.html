@@ -13,10 +13,12 @@
   <title>Como trocar de site e preservar as páginas que aparecem no Google? | Mamangava</title>
   <meta name="description" content="Saiba o que conferir antes de reformular o site, quando mapear URLs e como acompanhar a troca no Search Console.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <script src="../js/measurement.js" defer></script>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/site.css">
   <link rel="stylesheet" href="../css/editorial.css">
   <!-- SEO de produção -->
+  <link rel="describedby" href="https://mamangava.com.br/llms.txt" type="text/plain">
   <link rel="canonical" href="https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html">
   <meta property="og:title" content="Como trocar de site e preservar as páginas que aparecem no Google? | Mamangava">
   <meta property="og:description" content="Saiba o que conferir antes de reformular o site, quando mapear URLs e como acompanhar a troca no Search Console.">
@@ -38,19 +40,57 @@
       "name": "Mamangava",
       "url": "https://mamangava.com.br/",
       "logo": "https://mamangava.com.br/assets/logo-mamangava.png",
-      "telephone": "+5511965970387"
+      "telephone": "+5511965970387",
+      "description": "Desenvolvimento de sites institucionais, catálogos e páginas de apresentação para comércios locais, marcas, empresas e profissionais liberais no Brasil."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mamangava.com.br/#site",
+      "name": "Mamangava",
+      "url": "https://mamangava.com.br/",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://mamangava.com.br/#organizacao"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html#pagina",
+      "url": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html",
+      "name": "Como trocar de site e preservar as páginas que aparecem no Google?",
+      "description": "Saiba o que conferir antes de reformular o site, quando mapear URLs e como acompanhar a troca no Search Console.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://mamangava.com.br/#site"
+      },
+      "publisher": {
+        "@id": "https://mamangava.com.br/#organizacao"
+      },
+      "mainEntity": {
+        "@id": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html#artigo"
+      },
+      "breadcrumb": {
+        "@id": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html#navegacao"
+      }
     },
     {
       "@type": "Article",
       "headline": "Como trocar de site e preservar as páginas que aparecem no Google?",
       "description": "Saiba o que conferir antes de reformular o site, quando mapear URLs e como acompanhar a troca no Search Console.",
       "inLanguage": "pt-BR",
-      "mainEntityOfPage": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html",
+      "mainEntityOfPage": {
+        "@id": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html#pagina"
+      },
       "author": {
         "@id": "https://mamangava.com.br/#organizacao"
       },
       "publisher": {
         "@id": "https://mamangava.com.br/#organizacao"
+      },
+      "@id": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html#artigo",
+      "image": "https://mamangava.com.br/assets/compartilhamento.jpg",
+      "isPartOf": {
+        "@id": "https://mamangava.com.br/caderno/#pagina"
       }
     },
     {
@@ -74,7 +114,8 @@
           "name": "Como trocar de site e preservar as páginas que aparecem no Google?",
           "item": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html"
         }
-      ]
+      ],
+      "@id": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html#navegacao"
     }
   ]
 }
@@ -89,6 +130,7 @@
     <article>
       <div class="eyebrow">Blog · Reformulação</div>
       <h1>Como trocar de site e preservar as páginas que aparecem no Google?</h1>
+      <p class="article-byline">Por <a rel="author" href="../">Mamangava</a></p>
       <p>Antes de trocar de site, levante os endereços que recebem visitas e identifique o destino de cada página na versão nova. Sempre que possível, mantenha a mesma URL para o mesmo conteúdo. Quando o endereço mudar, combine um redirecionamento permanente para a página equivalente. O Google orienta mapear essas mudanças e acompanhar a migração no Search Console. <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=pt-br">Guia de migração do Google</a>.</p>
       <p>Pense numa fabricante que muda a página <code>/produtos/valvulas.html</code> para <code>/valvulas/</code>. O endereço antigo pode estar num catálogo em PDF, num anúncio e nos resultados do Google. Encaminhá-lo à nova página de válvulas preserva o caminho de quem já estava procurando aquele produto.</p>
       <h2>Uma planilha para usar antes da publicação</h2>
@@ -96,6 +138,7 @@
       <p>Confirme se a hospedagem permite o tipo de redirecionamento necessário antes de aprovar a nova estrutura. Depois da troca, abra os endereços antigos, teste formulários e veja se o sitemap publicado aponta para a versão nova. Pode haver oscilação enquanto o Google rastreia as mudanças. O histórico do Search Console ajuda a identificar quais páginas precisam de revisão.</p>
       <p>Se o e-mail da equipe usa o mesmo endereço da empresa, revise também <a href="dominio-e-hospedagem-de-site.html">a relação entre domínio, hospedagem e DNS</a>. Na <a href="../reformulacao-de-sites/">reformulação da Mamangava</a>, começamos pelo endereço atual para entender esse cenário antes de montar a proposta.</p>
       <a class="button" href="../#orcamento">Enviar meu site para avaliação ↗</a>
+      <p><a href="../criacao-de-sites-institucionais/">Conheça o serviço de criação de sites da Mamangava</a>.</p>
     </article>
   </main>
 </body>

@@ -13,9 +13,11 @@
   <title>Blog sobre criação de sites | Mamangava</title>
   <meta name="description" content="Artigos sobre preço, prazo, contratação e formatos de site. Veja exemplos para restaurantes, startups, escritórios e outras empresas.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <script src="../js/measurement.js" defer></script>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/site.css">
   <!-- SEO de produção -->
+  <link rel="describedby" href="https://mamangava.com.br/llms.txt" type="text/plain">
   <link rel="canonical" href="https://mamangava.com.br/caderno/">
   <meta property="og:title" content="Blog sobre criação de sites | Mamangava">
   <meta property="og:description" content="Artigos sobre preço, prazo, contratação e formatos de site. Veja exemplos para restaurantes, startups, escritórios e outras empresas.">
@@ -30,16 +32,176 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Blog da Mamangava",
-  "description": "Artigos sobre preço, prazo, contratação e formatos de site. Veja exemplos para restaurantes, startups, escritórios e outras empresas.",
-  "url": "https://mamangava.com.br/caderno/",
-  "inLanguage": "pt-BR",
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://mamangava.com.br/#organizacao",
-    "name": "Mamangava"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mamangava.com.br/#organizacao",
+      "name": "Mamangava",
+      "url": "https://mamangava.com.br/",
+      "logo": "https://mamangava.com.br/assets/logo-mamangava.png",
+      "telephone": "+5511965970387",
+      "description": "Desenvolvimento de sites institucionais, catálogos e páginas de apresentação para comércios locais, marcas, empresas e profissionais liberais no Brasil."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mamangava.com.br/#site",
+      "name": "Mamangava",
+      "url": "https://mamangava.com.br/",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://mamangava.com.br/#organizacao"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://mamangava.com.br/caderno/#pagina",
+      "url": "https://mamangava.com.br/caderno/",
+      "name": "Blog da Mamangava",
+      "description": "Artigos sobre preço, prazo, contratação e formatos de site. Veja exemplos para restaurantes, startups, escritórios e outras empresas.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://mamangava.com.br/#site"
+      },
+      "publisher": {
+        "@id": "https://mamangava.com.br/#organizacao"
+      },
+      "mainEntity": {
+        "@id": "https://mamangava.com.br/caderno/#materias"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://mamangava.com.br/caderno/#materias",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://mamangava.com.br/caderno/site-para-comercio-local.html",
+          "name": "Site para comércio local: o que ajuda o cliente a chegar até você?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://mamangava.com.br/caderno/site-para-marca-e-produtos.html",
+          "name": "Site para marcas e produtos: do catálogo ao pedido de cotação"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://mamangava.com.br/caderno/dominio-e-hospedagem-de-site.html",
+          "name": "Domínio e hospedagem de site: o que contratar primeiro?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://mamangava.com.br/caderno/trocar-site-sem-perder-google.html",
+          "name": "Como trocar de site e preservar as páginas que aparecem no Google?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://mamangava.com.br/caderno/landing-page-para-google-ads.html",
+          "name": "Landing page para Google Ads: o que testar antes de anunciar?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://mamangava.com.br/caderno/orcamento-criacao-de-site.html",
+          "name": "Orçamento para criação de site: o que enviar no primeiro contato?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://mamangava.com.br/caderno/site-para-contabilidade.html",
+          "name": "Site para contabilidade: o que mostrar antes da primeira reunião?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://mamangava.com.br/caderno/site-para-dentistas.html",
+          "name": "Site para dentistas: do endereço à primeira consulta"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://mamangava.com.br/caderno/custo-de-um-site.html",
+          "name": "Quanto custa criar um site para empresa?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://mamangava.com.br/caderno/site-para-restaurante.html",
+          "name": "Site para restaurante: cardápio, horário e reservas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://mamangava.com.br/caderno/site-para-startup.html",
+          "name": "Site para startup: o que publicar antes do lançamento?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://mamangava.com.br/caderno/catalogo-online-orcamento.html",
+          "name": "Catálogo online: como receber pedidos de orçamento"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "url": "https://mamangava.com.br/caderno/site-para-consultoria.html",
+          "name": "Site para consultoria: como explicar o trabalho antes da primeira reunião"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "url": "https://mamangava.com.br/caderno/site-para-industria.html",
+          "name": "Site para indústria: o que o comprador precisa para cotar"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "url": "https://mamangava.com.br/caderno/manutencao-de-site.html",
+          "name": "O que você paga depois que o site entra no ar?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "url": "https://mamangava.com.br/caderno/prazo-e-formatos.html",
+          "name": "Site, landing page ou loja virtual: qual faz sentido?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "url": "https://mamangava.com.br/caderno/quanto-tempo-demora-criar-site.html",
+          "name": "Quanto tempo demora para criar um site?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "url": "https://mamangava.com.br/caderno/comparar-propostas-criacao-site.html",
+          "name": "Como comparar propostas de criação de site"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "url": "https://mamangava.com.br/caderno/site-ou-instagram.html",
+          "name": "Minha empresa já usa Instagram. Preciso de um site?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "url": "https://mamangava.com.br/caderno/site-para-advogado.html",
+          "name": "Site para advogado: o que seu escritório precisa mostrar?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "url": "https://mamangava.com.br/caderno/site-para-medico.html",
+          "name": "Site para médico: o que o paciente precisa encontrar?"
+        }
+      ]
+    }
+  ]
 }
   </script>
   <!-- /SEO de produção -->
@@ -72,6 +234,7 @@
       <div class="archive-layout wrap">
         <div class="archive-sidebar">
           <h2 id="library-title">Todas as matérias</h2>
+          <p><a href="../criacao-de-sites-institucionais/">Precisa desenvolver um site? Conheça o serviço ↗</a></p>
           <div class="archive-controls" hidden>
             <label for="archive-search">Buscar no Blog</label>
             <input id="archive-search" type="search" placeholder="Ex.: orçamento">

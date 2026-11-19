@@ -50,10 +50,9 @@ let step = "existing";
 let quoteStarted = false;
 
 function trackQuote(event, projectType) {
-  window.dataLayer = window.dataLayer || [];
-  const measurement = { event };
+  const measurement = {};
   if (projectType) measurement.project_type = projectType;
-  window.dataLayer.push(measurement);
+  window.mamangavaTrack(event, measurement);
 }
 
 function quoteProjectType() {
@@ -131,6 +130,7 @@ function render(focus = false) {
     heading.tabIndex = -1;
     heading.focus();
   }
+  if (step !== "result") window.mamangavaTrack("quote_step_view", { quote_step: step });
 }
 
 function renderResult() {
@@ -198,7 +198,7 @@ function renderResult() {
   }
   const link = element("a", isExisting || isStore ? "Falar com o analista ↗" : "Enviar meu projeto pelo WhatsApp ↗", "button");
   link.href = `https://wa.me/${phone}?text=${encodeURIComponent(messages.join("\n"))}`;
-  link.addEventListener("click", () => trackQuote("whatsapp_click", projectType));
+  link.dataset.projectType = projectType;
   content.append(link);
 }
 
@@ -226,6 +226,7 @@ form.addEventListener("submit", event => {
     trackQuote("quote_start");
     quoteStarted = true;
   }
+  window.mamangavaTrack("quote_step_complete", { quote_step: step });
   history.push(step);
   step = getNext(step);
   render(true);
@@ -244,6 +245,15 @@ back.addEventListener("click", () => {
 
 actions.hidden = false;
 render();
+
+if ("IntersectionObserver" in window) {
+  const quoteVisibility = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    window.mamangavaTrack("quote_view");
+    quoteVisibility.disconnect();
+  }, { threshold: .15 });
+  quoteVisibility.observe(form);
+}
 
 const album = document.querySelector(".album");
 const projects = [...album.querySelectorAll(".project")];

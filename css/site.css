@@ -16,6 +16,8 @@
 
 .hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 2rem; position: relative; z-index: 1; }
 .hero-bottom p { max-width: 32ch; font-size: clamp(1rem, 1.8vw, 1.35rem); }
+.hero-intro { display: grid; justify-items: start; gap: .9rem; }
+.hero-contact { display: inline-flex; align-items: center; gap: .6rem; min-height: 2.75rem; color: var(--amber); }
 .price-link { display: grid; gap: .2rem; min-width: min(16rem, 100%); padding: 1rem 1.3rem; color: var(--carbon); background: var(--copper); text-decoration: none; transform: rotate(-2deg); transition: transform .28s var(--motion), background .28s var(--motion); }
 .price-link:hover { transform: rotate(0deg) translateY(-.25rem); background: var(--amber); }
 .price-link strong { font-size: clamp(2rem, 3.8vw, 3.5rem); line-height: 1; letter-spacing: -.07em; }
@@ -185,6 +187,7 @@ input { accent-color: var(--earth); }
 .article h1 { font: 700 clamp(2.55rem, 7vw, 5.25rem)/1 var(--serif); letter-spacing: -.065em; margin: .7rem 0 1.5rem; }
 .article h2 { margin: 2rem 0 .5rem; line-height: 1.15; }
 .article p { margin-bottom: .85rem; font-size: 1.12rem; }
+.article .article-byline { margin-block: -0.5rem 1.5rem; font-size: .92rem; color: var(--earth); }
 .article .button { margin-top: 1rem; }
 
 
